@@ -8,4 +8,11 @@ body {
     box-sizing: border-box;
     display: flex;
     flex-direction: column;
+    flex: 1;
+}
+
+.gridRow {
+    box-sizing: border-box;
+    display: flex;
+    flex: 1;
 }
