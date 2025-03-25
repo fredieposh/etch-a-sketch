@@ -26,10 +26,16 @@ function removeGrid() {
 }
 
 function paintCells() {
+    let opacity = 0;
     const gridCells = document.querySelectorAll(".gridCol");
     gridCells.forEach(cell => {
         cell.addEventListener('mouseenter', (e) => {
-            e.target.classList.add("cellColor");
+            const r = Math.floor(Math.random() * 256);
+            const g = Math.floor(Math.random() * 256);
+            const b = Math.floor(Math.random() * 256);
+            const randomColor = `rgba(${r}, ${g}, ${b}, ${opacity})`
+            e.target.style.backgroundColor = randomColor;
+            opacity += 0.1;
         });
         cell.addEventListener('mouseout', (e) => {
             e.preventDefault();
