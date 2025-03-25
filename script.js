@@ -1,3 +1,4 @@
+// Creating the grid
 for (let i = 0; i < 16; i++) {
     gridRowDiv = document.createElement("div");
     gridRowDiv.classList.add("gridRow");
@@ -13,4 +14,15 @@ gridRowsList.forEach(gridRow => {
         gridColDiv.classList.add("gridCol");
         gridRow.appendChild(gridColDiv);
     }
+})
+
+// Paint the cells
+gridCells = document.querySelectorAll(".gridCol");
+gridCells.forEach(cell => {
+    cell.addEventListener('mouseenter', (e) => {
+        e.target.classList.add("cellColor");
+    });
+    cell.addEventListener('mouseout', (e) => {
+        e.preventDefault();
+    });
 })
