@@ -1,20 +1,24 @@
 // Creating the grid
-for (let i = 0; i < 16; i++) {
-    gridRowDiv = document.createElement("div");
-    gridRowDiv.classList.add("gridRow");
-
-    containerDiv = document.querySelector("#container");
-    containerDiv.appendChild(gridRowDiv);
+function createGrid(n=16){
+    for (let i = 0; i < n; i++) {
+        gridRowDiv = document.createElement("div");
+        gridRowDiv.classList.add("gridRow");
+        
+        containerDiv = document.querySelector("#container");
+        containerDiv.appendChild(gridRowDiv);
+    }
+    
+    gridRowsList = document.querySelectorAll(".gridRow");
+    gridRowsList.forEach(gridRow => {
+        for (let i = 0; i < n; i++) {
+            gridColDiv = document.createElement("div");
+            gridColDiv.classList.add("gridCol");
+            gridRow.appendChild(gridColDiv);
+        }
+    })
 }
 
-gridRowsList = document.querySelectorAll(".gridRow");
-gridRowsList.forEach(gridRow => {
-    for (let i = 0; i < 16; i++) {
-        gridColDiv = document.createElement("div");
-        gridColDiv.classList.add("gridCol");
-        gridRow.appendChild(gridColDiv);
-    }
-})
+createGrid();
 
 // Paint the cells
 gridCells = document.querySelectorAll(".gridCol");
