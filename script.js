@@ -43,11 +43,11 @@ function paintCells() {
     });
 }
 
+// Initializing the first 16x16 grid and enabling it's coloring
 createGrid();
 paintCells();
 
 // Button click triggers input
-
 const changeGridSizeButton = document.querySelector("button");
 changeGridSizeButton.addEventListener('click', () => {
     do {
